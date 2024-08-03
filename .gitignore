@@ -1,0 +1,9 @@
+*.zip
+*.pck
+*.exe
+export.cfg
+export.presets.cfg
+*.translation
+
+.godot/
+.import/
