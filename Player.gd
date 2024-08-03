@@ -6,6 +6,7 @@ signal health_changed(health_value)
 @onready var anim_player = $AnimationPlayer
 @onready var muzzle_flash = $Camera3D/Pistol/MuzzleFlash
 @onready var raycast = $Camera3D/RayCast3D
+@onready var shoot_sound = $Camera3D/Pistol/AudioStreamPlayer3D
 
 var health = 3
 var kills = 0
@@ -77,6 +78,8 @@ func _physics_process(delta):
 @rpc("call_local")
 func play_shoot_effects():
 	anim_player.stop()
+	shoot_sound.stop()
+	shoot_sound.play(0.0)
 	anim_player.play("shoot")
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true

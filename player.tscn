@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6ooouoim20gu"]
+[gd_scene load_steps=19 format=3 uid="uid://b6ooouoim20gu"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_g4g8e"]
 [ext_resource type="PackedScene" uid="uid://by4ultrhiws20" path="res://Pistol.glb" id="2_rv2cy"]
 [ext_resource type="Texture2D" uid="uid://cb53jlckap5ga" path="res://addons/kenney_particle_pack/star_06.png" id="3_y3w5m"]
+[ext_resource type="AudioStream" uid="uid://dv5acofipitpe" path="res://glock18-1.wav" id="4_rpsfy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_x103i"]
 
@@ -203,6 +204,10 @@ one_shot = true
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_xd2lm")
 draw_pass_1 = SubResource("PlaneMesh_d7fsk")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Camera3D/Pistol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0658544, -0.28591)
+stream = ExtResource("4_rpsfy")
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.962664)
